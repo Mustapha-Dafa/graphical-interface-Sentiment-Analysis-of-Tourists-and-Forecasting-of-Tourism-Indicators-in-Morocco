@@ -50,6 +50,7 @@ def predict_simple(df , target , horizon ):
     model = SARIMAX(train,order=VARIABLES_CONFIG[target]["order"],seasonal_order=VARIABLES_CONFIG[target]["seasonal_order"])
     results = model.fit(disp=False)
     preds= results.forecast(horizon)
+    preds= np.round(preds).astype(int)
     predictions = pd.DataFrame(preds)
     return predictions
 
@@ -60,6 +61,7 @@ def predict_progressive(df,target , horizon):
         model = SARIMAX(train,order=VARIABLES_CONFIG[target]["order"],seasonal_order=VARIABLES_CONFIG[target]["seasonal_order"])
         results = model.fit(disp=False)
         pred = results.forecast(1)
+        pred= np.round(pred).astype(int)
         new_row = pd.DataFrame({target: [pred.iloc[0]]}, index=[pred.index[0]])
         train =pd.concat([train,new_row])
         predictions =pd.concat([predictions,new_row])
