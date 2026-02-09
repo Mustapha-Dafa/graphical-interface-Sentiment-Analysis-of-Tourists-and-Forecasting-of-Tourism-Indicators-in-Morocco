@@ -2,7 +2,7 @@
 
 Summary
 -------
-This project is simply the graphical interface for the PFA project. The interface was developed by Streamlit with Python 3.10 . Here is the link to the interface. : https://morocco-tourism-analysis.streamlit.app/
+This project is simply the graphical interface for the PFA project. The interface was developed by Streamlit with Python 3.10 . Here is the link to the interface. : https://morocco-tourism.streamlit.app/
 
 Repository structure
 --------------------
